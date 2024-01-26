@@ -1,0 +1,16 @@
+using UnityEngine;
+using UnityEditor;
+
+public class scriptObject_%CLASSNAME%_builder
+{
+    [MenuItem("Assets/Create/ScriptableObject/%CLASSNAME%")]
+    public static void CreateMyAsset()
+    {
+        %CLASSNAME% asset = ScriptableObject.CreateInstance<%CLASSNAME%>();
+        AssetDatabase.CreateAsset(asset, "Assets/%CLASSNAME%_ScripableObject.asset");
+        AssetDatabase.SaveAssets();
+
+        EditorUtility.FocusProjectWindow();
+        Selection.activeObject = asset;
+    }
+}
